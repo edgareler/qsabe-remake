@@ -1,0 +1,599 @@
+/* 
+    Created on : 15/07/2014, 13:48:06
+    Author     : Edgar Eler <eler@edgar.systems>
+*/
+body {
+    margin: 0;
+    cursor: default;
+    font-family: Ubuntu,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+a, a:hover {
+    color: #333;
+}
+
+header {
+    background: #333;
+    width: 100%;
+    min-width: 1262px;
+    height: 60px;
+}
+
+#menu-usuario {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 60px;
+    width: 150px;
+    background-color: rgba(51,51,51,0.9);
+}
+
+div#logo {
+    float: left;
+    margin: 14px 0 0 30px;
+    width: 126px;
+    height: 32px;
+}
+
+div#search {
+    float: left;
+    width: 650px;
+    margin: 11px 0 0 60px;
+}
+
+div#search div {
+    vertical-align: middle;
+}
+
+#notify {
+    float: right;
+    margin: 14px 64px 0 0;
+}
+
+a.bt-notify {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 16px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+a.bt-notify:hover{
+    opacity: 1.0;
+}
+
+a.bt-notification {
+    background-image: url(/img/bt-notification.png);
+}
+
+a.bt-notification-alert {
+    background-image: url(/img/bt-notification-alert.png);
+}
+
+a.bt-question {
+    background-image: url(/img/bt-question.png);
+}
+
+a.bt-question-alert {
+    background-image: url(/img/bt-question-alert.png);
+}
+
+a.profile {
+    display: block;
+    width: 150px;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    font-size: 16px;
+    color: white;
+    font-weight: normal;
+}
+
+a.main-profile{
+    float: right;
+}
+
+a.profile img {
+    float: left;
+    margin: 15px;
+}
+
+a.profile:hover {
+    background-color: #222;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+div#main {
+    display: table;
+    width: 100%;
+    min-width: 1262px;
+}
+
+div#left {
+    display: table-cell;
+    vertical-align: top;
+    width: 12%;
+    min-width: 244px;
+    padding:20px;
+    height: 100%;
+}
+
+div#content {
+    display: table-cell;
+    vertical-align: top;
+    width: 73%;
+    height: 100%;
+    padding: 20px 20px 20px 0;
+}
+
+div#right {
+    display: table-cell;
+    vertical-align: top;
+    width: 15%;
+    min-width: 300px;
+    height: 100%;
+    background: #DDD;
+    border: 1px solid #CCC;
+}
+
+.box {
+    display: inline-block;
+    background: #EEE;
+    border: 1px solid #CCC;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+}
+
+.title,
+.title-no-icon {
+    display: inline-block;
+    padding-left: 36px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.title-no-icon {
+    padding-left: 0;
+    margin-bottom: 0px;
+}
+
+.bt-context,
+a.bt-context,
+a:hover.bt-context{
+    display: inline-block;
+    height: 48px;
+    padding-left: 46px;
+    line-height: 48px;
+    padding-right: 16px;
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background-position: 12px 12px;
+    text-decoration: none;
+    outline: none;
+}
+
+.context-small,
+a.context-small,
+a:hover.context-small,
+.count-respostas-small,
+a.count-respostas-small,
+a:hover.count-respostas-small {
+    display: inline-block;
+    height: 16px;
+    line-height: 16px;
+    padding-left: 20px;
+    margin: 12px 16px 12px 0;
+    font-size: 13px;
+}
+
+.pergunta {
+    width: 100%;
+    min-height: 80px;
+    padding-right: 12px;
+}
+
+.texto-pergunta,
+a.texto-pergunta,
+a:hover.texto-pergunta {
+    display: block;
+    padding-top: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+.count-respostas {
+    float: left;
+    width: 70px;
+    height: 48px;
+    padding: 3px;
+    line-height: 18px;
+    margin: 16px 20px 16px 20px;
+    color: white;
+    background-color: #990000;
+    text-align: center;
+    font-size: 13px;
+}
+
+.count-respostas span {
+    display: block;
+    margin-top: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.count-respostas-small,
+a.count-respostas-small,
+a:hover.count-respostas-small {
+    float:right;
+    padding-left: 0px;
+    margin: 12px 0 12px 0;
+}
+
+.count-respostas-small span {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+    color: white;
+    font-size: 11px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; 
+    border-radius: 4px; 
+}
+
+div#nova-pergunta {
+    display: table;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+div#perguntas-semelhantes {
+    display: table-cell;
+    vertical-align: top; 
+    width: 19%;
+    min-width: 260px;
+    margin-bottom: 0px;
+}
+
+div#perguntas-semelhantes a {
+    display: block;
+    margin-top: 16px;
+    font-size: 13px;
+}
+
+div#nova-pergunta-content {
+    display: table-cell;
+    vertical-align: top;
+    padding: 0;
+    width: 81%;
+    /*background: #FFFF00;*/
+}
+
+.mg-20 {
+    margin: 20px;
+}
+
+.mg-tp-40 {
+    margin-top: 40px;
+}
+
+.bd-bt {
+    border-bottom: 1px solid #CCC;
+}
+
+#right .pergunta {
+    min-height: 80px;
+    padding: 12px 12px 0 12px;
+    border-top: 1px solid #CCC;
+}
+
+#right .texto-pergunta {
+    padding-top: 0px;
+    font-size: 13px;
+    font-weight: normal;
+}
+
+/*
+ * Abas 
+ */
+.nav-tabs > li > a,
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus
+{
+    border-radius: 0;
+    font-size: 16px;
+    height: 48px;
+    padding: 0 24px 0 46px;
+    /*margin: 0;*/
+    line-height: 48px;
+    font-weight: bold;
+    background-position: 12px 12px;
+    margin: 0 0 0 12px;
+    outline: none;
+    /*border-color: #CCC;*/
+}
+
+.nav-tabs {
+    border-color: #CCC;
+}
+
+.nav-tabs > li > a:hover {
+    background-color: #F5F5F5;
+    border-color: #CCC;
+    outline: none;
+}
+
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focused{
+    border-color: #CCC;
+    outline: none;
+}
+
+.nav-tabs > li > a.verde,
+.nav-tabs > li > a:hover.verde,
+.nav-tabs > li.active > a.verde,
+.nav-tabs > li.active > a:hover.verde {
+    color: #006633;
+}
+
+.nav-tabs > li > a.vermelho,
+.nav-tabs > li > a:hover.vermelho,
+.nav-tabs > li.active > a.vermelho,
+.nav-tabs > li.active > a:hover.vermelho {
+    color: #990000;
+}
+
+.nav-tabs > li > a.ouro,
+.nav-tabs > li > a:hover.ouro,
+.nav-tabs > li.active > a.ouro,
+.nav-tabs > li.active > a:hover.ouro {
+    color: #959500;
+}
+
+/* Ícones */
+.qsabeicon {
+    background-position: left top;
+    background-repeat: no-repeat;
+}
+
+.qsabeicon-comunidade {
+    background-image: url(/img/ic-comunidade.png);
+}
+
+.qsabeicon-contextos {
+    background-image: url(/img/ic-contextos.png);
+}
+
+.qsabeicon-desempenho {
+    background-image: url(/img/ic-desempenho.png);
+}
+
+.qsabeicon-minhas-perguntas {
+    background-image: url(/img/ic-minhas-perguntas.png);
+}
+
+.qsabeicon-nova-pergunta {
+    background-image: url(/img/ic-nova-pergunta.png);
+}
+
+.qsabeicon-perguntas-qsabe {
+    background-image: url(/img/ic-perguntas-qsabe.png);
+}
+
+.qsabeicon-perguntas-responder {
+    background-image: url(/img/ic-perguntas-responder.png);
+}
+
+.qsabeicon-respostas {
+    background-image: url(/img/ic-respostas.png);
+}
+
+.qsabeicon-ok {
+    background-image: url(/img/ic-ok.png);
+}
+
+/* Ícones de Contexto */
+.qsabeicon-android-l {
+    background-image: url(/img/contextos/contextos/android-l.png);
+}
+
+.qsabeicon-android-s {
+    background-image: url(/img/contextos/android-s.png);
+}
+
+.qsabeicon-astronomia-l {
+    background-image: url(/img/contextos/astronomia-l.png);
+}
+
+.qsabeicon-contabilidade-l {
+    background-image: url(/img/contextos/contabilidade-l.png);
+}
+
+.qsabeicon-contabilidade-s {
+    background-image: url(/img/contextos/contabilidade-s.png);
+}
+
+.qsabeicon-criptografia-l {
+    background-image: url(/img/contextos/criptografia-l.png);
+}
+
+.qsabeicon-criptografia-s {
+    background-image: url(/img/contextos/criptografia-s.png);
+}
+
+.qsabeicon-eletricidade-l {
+    background-image: url(/img/contextos/eletricidade-l.png);
+}
+
+.qsabeicon-eletricidade-s {
+    background-image: url(/img/contextos/eletricidade-s.png);
+}
+
+.qsabeicon-fisica-l {
+    background-image: url(/img/contextos/fisica-l.png);
+}
+
+.qsabeicon-fisica-s {
+    background-image: url(/img/contextos/fisica-s.png);
+}
+
+.qsabeicon-fotografia-l {
+    background-image: url(/img/contextos/fotografia-l.png);
+}
+
+.qsabeicon-informatica-l {
+    background-image: url(/img/contextos/informatica-l.png);
+}
+
+.qsabeicon-quimica-l {
+    background-image: url(/img/contextos/quimica-l.png);
+}
+
+.qsabeicon-jogos-l {
+    background-image: url(/img/contextos/jogos-l.png);
+}
+
+
+/* Cores de Fonte */
+.verde-claro,
+a.verde-claro,
+a:hover.verde-claro {
+    color: #009900;
+}
+
+.verde-escuro,
+a.verde-escuro,
+a:hover.verde-escuro {
+    color: #006633;
+}
+
+.vermelho-escuro,
+a.vermelho-escuro,
+a:hover.vermelho-escuro {
+    color: #990000;
+}
+
+.azul-claro,
+a.azul-claro,
+a:hover.azul-claro {
+    color: #0066CC;
+}
+
+.azul-petroleo,
+a.azul-petroleo,
+a:hover.azul-petroleo {
+    color: #003366;
+}
+
+.azul-escuro,
+a.azul-escuro,
+a:hover.azul-escuro {
+    color: #000033;
+}
+
+.ouro,
+a.ouro,
+a:hover.ouro {
+    color: #959500;
+}
+
+.laranja,
+a.laranja,
+a:hover.laranja {
+    color: #FF6600;
+}
+
+/* Cores de Fundo */
+.bg-verde-claro {
+    background-color: #009900;
+}
+
+.bg-verde-escuro {
+    background-color: #006633;
+}
+
+.bg-vermelho-escuro {
+    background-color: #990000;
+}
+
+.bg-azul-claro {
+    background-color: #0066CC;
+}
+
+.bg-azul-petroleo {
+    background-color: #003366;
+}
+
+.bg-azul-escuro {
+    background-color: #000033;
+}
+
+.bg-ouro {
+    background-color: #959500;
+}
+
+.bg-branco-gelo {
+    background-color: #F7F7F4;
+}
+
+.bg-cinza-claro {
+    background-color: #EEE;
+}
+
+.bg-laranja {
+    background-color: #FF6600;
+}
+
+/* Forms */
+.form-group, .form-horizontal .form-group, .row {
+    margin: 12px 0 0 0;
+    /*font-size: 14px;*/
+}
+
+
+/*label,
+.form-horizontal .control-label {*/
+.label-pergunta,
+.form-horizontal .label-pergunta {
+    font-size: 14px;
+    text-align: left;
+    padding-left: 0;
+    min-width: 32px;
+}
+
+.form-100 {
+    display: inline-block;
+    width: 74%;
+    margin-left: 16px;
+}
+
+.form-textarea {
+    padding-right: 15px;
+}
+
+#text-pergunta {
+    height:200px
+}
+
+.radio, .checkbox {
+    margin-left: 20px;
+}
+
+/* Charts */
+.chart {
+
+}
